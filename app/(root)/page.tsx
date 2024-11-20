@@ -7,7 +7,7 @@ const Home = () => {
       Home
       <section className="flex flex-col gap-5">
         <h1 className="text-20 font-bold text-white-1">Trending Podcasts</h1>
-        <Button className="text-white-1 bg-orange-1">Button</Button>
+        {/* <Button className="text-white-1 bg-orange-1">Button</Button> */}
 
       </section>
     </div>
