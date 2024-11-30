@@ -39,23 +39,25 @@ const voiceCategories = ["alloy", "shimmer", "nova", "echo", "fable", "onyx"];
 const formSchema = z.object({
   podcastTitle: z.string().min(2),
   podcastDescription: z.string().min(2),
-
 });
 
 const CreatePodcast = () => {
-  const [isSubmitting, setIsSubmitting ] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-const [imagePrompt, setImagePrompt] = useState('');
-const [imageStorageId, setImageStorageId] = useState<Id<"_storage"> | null >(null);
-const [imageUrl, setImageUrl] = useState('');  
+  const [imagePrompt, setImagePrompt] = useState("");
+  const [imageStorageId, setImageStorageId] = useState<Id<"_storage"> | null>(
+    null
+  );
+  const [imageUrl, setImageUrl] = useState("");
 
-const [audioUrl, setAudioUrl] = useState('');
-const [audioDuration, setAudioDuration] = useState(0);
-const [audioStorageId, setAudioStorageId] = useState<Id<"_storage"> | null >(null);
+  const [audioUrl, setAudioUrl] = useState("");
+  const [audioDuration, setAudioDuration] = useState(0);
+  const [audioStorageId, setAudioStorageId] = useState<Id<"_storage"> | null>(
+    null
+  );
 
-const [voiceType, setVoiceType] = useState<string | null>(null);
-const [voicePrompt, setVoicePrompt] = useState  ('')
-
+  const [voiceType, setVoiceType] = useState<string | null>(null);
+  const [voicePrompt, setVoicePrompt] = useState("");
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
@@ -88,7 +90,7 @@ const [voicePrompt, setVoicePrompt] = useState  ('')
               render={({ field }) => (
                 <FormItem className="flex flex-col gap-2.5">
                   <FormLabel className="text-16 font-bold text-white-1">
-                    Username
+                    Title
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -103,13 +105,13 @@ const [voicePrompt, setVoicePrompt] = useState  ('')
               )}
             />
             <div className="flex flex-col gap-2.5">
-              <Label className="text-16 font-bold text-white-1">
+              <Label className="text-16 font-bold text-white-1 ">
                 Select AI voice
               </Label>
               <Select onValueChange={(value) => setVoiceType(value)}>
                 <SelectTrigger
                   className={cn(
-                    "text-16 w-full border-none bg-black-1 text-gray-1"
+                    "text-16 w-full border-none bg-black-1 text-gray-1 focus-visible:ring-orange-1"
                   )}
                 >
                   <SelectValue
@@ -159,14 +161,14 @@ const [voicePrompt, setVoicePrompt] = useState  ('')
             />
           </div>
           <div className="flex flex-col pt-10">
-            <GeneratePodcast 
-            setAudioStorageId ={setAudioStorageId}
-            setAudio= {setAudioUrl}
-            voiceType = {voiceType} 
-            audio={audioUrl}
-            voicePrompt={voicePrompt}
-            setVoicePrompt= {setVoicePrompt}  
-            setAudioDuration= {setAudioDuration}  
+            <GeneratePodcast
+              setAudioStorageId={setAudioStorageId}
+              setAudio={setAudioUrl}
+              voiceType={voiceType}
+              audio={audioUrl}
+              voicePrompt={voicePrompt}
+              setVoicePrompt={setVoicePrompt}
+              setAudioDuration={setAudioDuration}
             />
             <GenerateThumbnail />
             <div className="mt-10 w-full">
@@ -176,12 +178,11 @@ const [voicePrompt, setVoicePrompt] = useState  ('')
               >
                 {isSubmitting ? (
                   <>
-                  Submitting
-                  <Loader size={20} className="animate-spin ml-2"/>
-
+                    Submitting
+                    <Loader size={20} className="animate-spin ml-2" />
                   </>
                 ) : (
-                  'Submit & Publish Podcast'
+                  "Submit & Publish Podcast"
                 )}
               </Button>
             </div>
