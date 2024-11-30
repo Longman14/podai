@@ -19,7 +19,7 @@ const Home = () => {
               imgURL={imgURL}
               title={title}
               description={description}
-              podcastId={id}
+              // podcastId={id}
             />
           ))}
         </div>

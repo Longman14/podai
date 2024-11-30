@@ -4,13 +4,13 @@ import React from "react";
 const PodcastCard = ({
   imgURL,
   title,
-  description,
-  podcastId,
+  description
+  // podcastId,
 }: {
   imgURL: string;
   title: string;
   description: string;
-  podcastId: number;
+  // podcastId: number;
 }) => {
   return (
     <div className="cursor-pointer">
