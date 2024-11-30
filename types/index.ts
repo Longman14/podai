@@ -20,7 +20,7 @@ export interface TopPodcastersProps {
   name: string;
   podcast: {
     podcastTitle: string;
-    podcastId: Id<"podcasts">;
+    // podcastId: Id<"podcasts">;
   }[];
   totalPodcasts: number;
 }
@@ -76,7 +76,7 @@ export interface LatestPodcastCardProps {
   audioUrl: string;
   author: string;
   views: number;
-  podcastId: Id<"podcasts">;
+  // podcastId: Id<"podcasts">;
 }
 
 export interface PodcastDetailPlayerProps {
@@ -85,7 +85,7 @@ export interface PodcastDetailPlayerProps {
   author: string;
   isOwner: boolean;
   imageUrl: string;
-  podcastId: Id<"podcasts">;
+  // podcastId: Id<"podcasts">;
   imageStorageId: Id<"_storage">;
   audioStorageId: Id<"_storage">;
   authorImageUrl: string;
@@ -97,7 +97,7 @@ export interface AudioProps {
   audioUrl: string;
   author: string;
   imageUrl: string;
-  podcastId: string;
+  // podcastId: string;
 }
 
 export interface AudioContextType {
@@ -109,7 +109,7 @@ export interface PodcastCardProps {
   imgUrl: string;
   title: string;
   description: string;
-  podcastId: Id<"podcasts">;
+  // podcastId: Id<"podcasts">;
 }
 
 export interface CarouselProps {
